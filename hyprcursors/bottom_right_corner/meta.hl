@@ -1,0 +1,7 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.10
+
+define_size = 0, bottom_right_corner.svg
+
+define_override = bottom_right_corner
