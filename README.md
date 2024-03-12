@@ -5,9 +5,12 @@ Based on:
 - https://github.com/ful1e5/BreezeX_Cursor
 - https://github.com/rose-pine/cursor
 
+Only useable with the new [Hyprcursor](https://github.com/hyprwm/hyprcursor) library. For more details, check out Vaxry's [blog post](https://blog.vaxry.net/articles/2024-cursors) on the new cursor project.
+
 ## 🏗️ Usage
 
-Only useable with the new [Hyprcursor](https://github.com/hyprwm/hyprcursor) library. For more details, check out Vaxry's [blog post](https://blog.vaxry.net/articles/2024-cursors) on the new cursor project.
+1. Extract to `~/.local/share/icons`
+2. Add `env = HYPRCURSOR_THEME,rose-pine-cursor-hyprcursor` to your hyprland config
 
 ## 🖼️ Gallery
 
