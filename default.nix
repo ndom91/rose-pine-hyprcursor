@@ -5,7 +5,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = pkgs.fetchFromGitHub {
     owner = "ndom91";
     repo = "rose-pine-cursor-hyprcursor";
-    rev = "f96a8e09fa7e60d5e48543e15693774dcf092fbe";
+    rev = "e4dde6d19da2d048cf4b224fe2ed1576c9c50087";
     sha256 = "sha256-h7qivaCqoJj1ZbWT86WA1gp769vgTUhDDxcJOZ1WfMU=";
   };
 
