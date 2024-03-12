@@ -1,19 +1,17 @@
-{ lib, stdenvNoCC, fetchurl }:
+{ lib, stdenv, pkgs, fetchurl }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "rose-pine-cursor-hyprcursor";
   version = "0.1.0";
-  src = fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "ndom91";
     repo = "rose-pine-cursor-hyprcursor";
     rev = "f96a8e09fa7e60d5e48543e15693774dcf092fbe";
-    sha256 = "sha256-CPK3kbc8lroPU8MAeNP8JSStzDCKCvAHhj6yQ1fWKkY=";
+    sha256 = "sha256-h7qivaCqoJj1ZbWT86WA1gp769vgTUhDDxcJOZ1WfMU=";
   };
 
-  sourceRoot = ".";
-
   installPhase = ''
-    mkdir -p $out/share/icons
-    cp -R rose-pine-cursor-hyprcursor $out/share/icons/
+    mkdir -p $out/share/icons/rose-pine-cursor-hyprcursor
+    cp -R . $out/share/icons/rose-pine-cursor-hyprcursor/
   '';
 
   meta = with lib; {
