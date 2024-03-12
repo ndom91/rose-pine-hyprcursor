@@ -5,6 +5,10 @@ Based on:
 - https://github.com/ful1e5/BreezeX_Cursor
 - https://github.com/rose-pine/cursor
 
+## 🏗️ Usage
+
+Only useable with the new [Hyprcursor](https://github.com/hyprwm/hyprcursor) library. For more details, check out Vaxry's [blog post](https://blog.vaxry.net/articles/2024-cursors) on the new cursor project.
+
 ## 🖼️ Gallery
 
 ![Cursor showcase](https://github.com/rose-pine/cursor/assets/44733677/0c4f6823-48d5-4ec1-8e1c-201b22463ea1)

@@ -1,7 +1,0 @@
-resize_algorithm = none
-hotspot_x = 0.50
-hotspot_y = 0.10
-
-define_size = 0, zoom-in.svg
-
-define_override = zoom-in
