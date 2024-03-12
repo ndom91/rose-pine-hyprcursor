@@ -23,7 +23,6 @@ let
   rose-pine-cursor-hyprcursor = pkgs.callPackage ../../packages/rose-pine-cursor-hyprcursor/default.nix { };
 in
 {
-
   environment.systemPackages = [
     rose-pine-cursor-hyprcursor
   };
