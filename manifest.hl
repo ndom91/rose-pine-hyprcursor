@@ -1,4 +1,4 @@
-name = breezex-rose-pine
-description = BreezeX remixed with Rose Pine
-version = 0.1
+name = rose-pine-cursor-hyprcursor
+description = BreezeX remixed with Rose Pine remixed to Hyprcursor format
+version = 0.2
 cursors_directory = hyprcursors

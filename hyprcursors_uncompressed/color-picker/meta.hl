@@ -1,0 +1,5 @@
+resize_algorithm = none
+hotspot_x = 0.21
+hotspot_y = 0.79
+
+define_size = 0, color-picker.svg

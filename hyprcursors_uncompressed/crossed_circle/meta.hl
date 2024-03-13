@@ -1,0 +1,8 @@
+resize_algorithm = none
+hotspot_x = 0.29
+hotspot_y = 0.15
+
+define_size = 0, crossed_circle.svg
+
+define_override = forbidden
+define_override = not-allowed

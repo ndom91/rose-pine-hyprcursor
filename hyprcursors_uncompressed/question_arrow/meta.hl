@@ -1,0 +1,10 @@
+resize_algorithm = none
+hotspot_x = 0.29
+hotspot_y = 0.15
+
+define_size = 0, question_arrow.svg
+
+define_override = help
+define_override = left_ptr_help
+define_override = whats_this
+define_override = dnd-ask

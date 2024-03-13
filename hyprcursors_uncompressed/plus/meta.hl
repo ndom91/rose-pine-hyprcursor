@@ -1,0 +1,7 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.50
+
+define_size = 0, plus.svg
+
+define_override = cell

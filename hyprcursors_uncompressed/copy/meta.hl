@@ -1,0 +1,7 @@
+resize_algorithm = none
+hotspot_x = 0.29
+hotspot_y = 0.15
+
+define_size = 0, copy.svg
+
+define_override = dnd-copy

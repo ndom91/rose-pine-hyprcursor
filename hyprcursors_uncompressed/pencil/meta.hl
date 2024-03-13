@@ -1,0 +1,7 @@
+resize_algorithm = none
+hotspot_x = 0.19
+hotspot_y = 0.79
+
+define_size = 0, pencil.svg
+
+define_override = draft

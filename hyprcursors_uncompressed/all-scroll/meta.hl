@@ -1,0 +1,8 @@
+resize_algorithm = none
+hotspot_x = 0.50
+hotspot_y = 0.10
+
+define_size = 0, all-scroll.svg
+
+define_override = fleur
+define_override = size_all
