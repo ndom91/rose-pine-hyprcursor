@@ -6,7 +6,7 @@ Based on:
 - https://github.com/rose-pine/cursor
 
 > [!NOTE]
-> This only includes the "dark" version of the original Rose Pine BreezeX cursor theme. The uncompressed cursor SVG's are included in the `hyprcursor_uncompressed` directory if you want to make any changes to the SVG's.
+> This only includes [the "dark" version](https://github.com/rose-pine/cursor#gallery) of the original Rose Pine BreezeX cursor theme. The uncompressed cursor SVG's are included in the `hyprcursor_uncompressed` directory if you want to make any changes to the SVG's.
 
 Only useable with the new [Hyprcursor](https://github.com/hyprwm/hyprcursor) library. For more details, check out Vaxry's [blog post](https://blog.vaxry.net/articles/2024-cursors) on the new cursor project.
 
