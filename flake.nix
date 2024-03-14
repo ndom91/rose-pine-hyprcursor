@@ -16,6 +16,8 @@
       genSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
         "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
       ];
       pkgsFor = nixpkgs.legacyPackages;
       rose-pine-cursor-hyprcursor = nixpkgs.callPackage ./nix/default.nix { };
