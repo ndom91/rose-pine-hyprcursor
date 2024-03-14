@@ -1,6 +1,6 @@
 # rose-pine-hyprcursor
 
-![AUR Version](https://img.shields.io/aur/version/rose-pine-hyprcursor?style=for-the-badge&logo=arch&labelColor=black&color=black)
+![AUR Version](https://img.shields.io/aur/version/rose-pine-hyprcursor?style=for-the-badge&logo=archlinux&logoColor=white&labelColor=black&color=black)
 ![AUR Maintainer](https://img.shields.io/aur/maintainer/rose-pine-hyprcursor?style=for-the-badge&labelColor=black&color=black)
 ![AUR Last Modified](https://img.shields.io/aur/last-modified/rose-pine-hyprcursor?style=for-the-badge&labelColor=black&color=black)
 
