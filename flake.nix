@@ -34,7 +34,7 @@
 
       config = {
         environment.systemPackages = [
-          rose-pine-cursor-hyprcursor
+          self.packages.${system}.rose-pine-cursor-hyprcursor
         ];
         home.pointerCursor = {
           gtk.enable = true;
