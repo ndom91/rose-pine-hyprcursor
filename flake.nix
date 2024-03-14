@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    utils.url = "github:numtide/flake-utils";
 
     hyprlang = {
       url = "github:hyprwm/hyprlang";
@@ -10,42 +11,31 @@
     };
   };
 
-  outputs =
-    { self, nixpkgs, hyprlang }:
-    let
-      genSystems = nixpkgs.lib.genAttrs [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-      pkgsFor = nixpkgs.legacyPackages;
-      rose-pine-cursor-hyprcursor = nixpkgs.callPackage ./nix/default.nix { };
-    in
-    {
-      overlays.default = _: prev: {
-        rose-pine-cursor-hyprland = prev.callPackage ./nix/default.nix { nixpkgs = prev; };
-      };
+  outputs = { self, nixpkgs, utils, hyprlang } @inputs:
+    utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        packages.default = pkgs.callPackage ./nix/default.nix { nixpkgs = pkgs; };
 
-      packages = genSystems (system: self.overlays.default null pkgsFor.${system});
-
-      modules = [
-        ({ lib, ... }: {
-          home.pointerCursor = {
-            gtk.enable = true;
-            x11.enable = true;
-            package = rose-pine-cursor-hyprcursor;
-            name = "rose-pine-cursor-hyprcursor";
-            size = 24;
+        nixosModules.default = { config, lib, ... }: {
+          config = {
+            home.pointerCursor = {
+              gtk.enable = true;
+              x11.enable = true;
+              package = self.defaultPackage."${system}";
+              name = "rose-pine-cursor-hyprcursor";
+              size = 24;
+            };
+            gtk.cursorTheme = {
+              package = self.defaultPackage."${system}";
+              name = "rose-pine-cursor-hyprcursor";
+              size = 24;
+            };
           };
-          gtk.cursorTheme = {
-            package = rose-pine-cursor-hyprcursor;
-            name = "rose-pine-cursor-hyprcursor";
-            size = 24;
-          };
-        })
-      ];
+        };
 
-      formatter = genSystems (system: pkgsFor.${system}.nixpkgs-fmt);
-    };
+        formatter = nixpkgs.${system}.nixpkgs-fmt;
+      });
 }
