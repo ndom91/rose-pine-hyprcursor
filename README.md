@@ -29,11 +29,11 @@ yay -S rose-pine-cursor-hyprland
 
 ### Nix
 
-1. Add this flake to your `flake.nix`
+1. Add us to your `flake.nix` inputs
 
 ```nix
 {
-  description = "ndom91 config flake";
+  description = "Laptop Machine Flake";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -41,16 +41,16 @@ yay -S rose-pine-cursor-hyprland
 
     # Add this line
     rose-pine-cursor-hyprcursor.url = "github:ndom91/rose-pine-cursor-hyprcursor";
+    # ^^^^^
   };
-  outputs = { self, unstable, agenix, nix-colors, nixpkgs, ... } @inputs: {
+  outputs = { self, unstable, nixpkgs, ... } @inputs: {
   nixosConfigurations = {
-    ndo4 = nixpkgs.lib.nixosSystem {
+    laptop01 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ./hosts/ndo4/configuration.nix
+        ./hosts/laptop01/configuration.nix
       ];
     };
-  };
   };
 }
 ```
@@ -62,8 +62,6 @@ Add the `HYPRCURSOR_THEME` environment variable to your `hyprland` config
 ```
 env = HYPRCURSOR_THEME,rose-pine-cursor-hyprcursor
 ```
-
-## 🖼️ Gallery
 
 ## 🛟 Troubleshooting
 
