@@ -40,7 +40,7 @@ yay -S rose-pine-cursor-hyprland
     hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
 
     # Add this line
-    rose-pine-cursor-hyprcursor.url = "github:ndom91/rose-pine-cursor-hyprcursor";
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     # ^^^^^
   };
   outputs = { self, unstable, nixpkgs, ... } @inputs: {
