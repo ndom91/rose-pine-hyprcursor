@@ -24,7 +24,7 @@ This is a [Rose Pine](https://github.com/rose-pine/cursor) remix of the original
 1. Install from the [AUR](https://aur.archlinux.org/packages/rose-pine-hyprcursor)
 
 ```bash
-yay -S rose-pine-cursor-hyprland
+yay -S rose-pine-hyprcursor
 ```
 
 ### Nix
