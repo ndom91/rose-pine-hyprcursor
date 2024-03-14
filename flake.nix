@@ -12,30 +12,23 @@
   };
 
   outputs =
-    { self, nixpkgs, systems, ... } @ inputs:
+    { self, nixpkgs }:
     let
-      inherit (nixpkgs) lib;
-      eachSystem = lib.genAttrs (import systems);
-      pkgsFor = eachSystem (system:
-        import nixpkgs {
-          localSystem.system = system;
-          overlays = with self.overlays; [ default ];
-        });
+      genSystems = nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      pkgsFor = nixpkgs.legacyPackages;
+      rose-pine-cursor-hyprcursor = nixpkgs.callPackage ./nix/default.nix { };
     in
     {
-      overlays = import ./nix/overlays.nix { inherit inputs lib nixpkgs; };
+      overlays.default = _: prev: {
+        rose-pine-cursor-hyprland = prev.callPackage ./nix/default.nix { };
+      };
 
-      packages = eachSystem (system: {
-        default = self.packages.${system}.rose-pine-cursor-hyprcursor;
-        inherit (pkgsFor.${system}) rose-pine-cursor-hyprcursor;
-      });
-
-      formatter = eachSystem (system: pkgsFor.${system}.nixpkgs-fmt);
+      packages = genSystems (system: self.overlays.default null pkgsFor.${system});
 
       config = {
-        environment.systemPackages = [
-          self.packages.${system}.rose-pine-cursor-hyprcursor
-        ];
         home.pointerCursor = {
           gtk.enable = true;
           x11.enable = true;
@@ -44,10 +37,12 @@
           size = 24;
         };
         gtk.cursorTheme = {
-          package = rose-pine-cursor;
+          package = rose-pine-cursor-hyprcursor;
           name = "rose-pine-cursor-hyprcursor";
           size = 24;
         };
       };
+
+      formatter = genSystems (system: pkgsFor.${system}.nixpkgs-fmt);
     };
 }
