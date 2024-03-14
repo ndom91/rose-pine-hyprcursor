@@ -1,8 +1,8 @@
-{ lib, stdenv, pkgs, fetchurl }:
+{ lib, stdenv, nixpkgs, fetchurl }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "rose-pine-cursor-hyprcursor";
   version = "0.1.0";
-  src = pkgs.fetchFromGitHub {
+  src = nixpkgs.fetchFromGitHub {
     owner = "ndom91";
     repo = "rose-pine-cursor-hyprcursor";
     rev = "e4dde6d19da2d048cf4b224fe2ed1576c9c50087";

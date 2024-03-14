@@ -29,17 +29,28 @@ yay -S rose-pine-cursor-hyprland
 
 ### Nix
 
-1. Copy `default.nix` derivation into your project
-2. Import it in your `configuration.nix`
+1. Add this flake to your `flake.nix`
 
 ```nix
-{ lib, inputs, pkgs, ... }:
-let
-  rose-pine-cursor-hyprcursor = pkgs.callPackage ../../packages/rose-pine-cursor-hyprcursor/default.nix { };
-in
 {
-  environment.systemPackages = [
-    rose-pine-cursor-hyprcursor
+  description = "ndom91 config flake";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
+
+    # Add this line
+    rose-pine-cursor-hyprcursor.url = "github:ndom91/rose-pine-cursor-hyprcursor";
+  };
+  outputs = { self, unstable, agenix, nix-colors, nixpkgs, ... } @inputs: {
+  nixosConfigurations = {
+    ndo4 = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/ndo4/configuration.nix
+      ];
+    };
+  };
   };
 }
 ```
@@ -53,7 +64,6 @@ env = HYPRCURSOR_THEME,rose-pine-cursor-hyprcursor
 ```
 
 ## 🖼️ Gallery
-
 
 ## 🛟 Troubleshooting
 
@@ -80,7 +90,7 @@ hyprland.override {
 
 ## 🤝 Contributing
 
-Open to all contributions! 
+Open to all contributions!
 
 This is originally based upon the work in the following two repositories.
 
