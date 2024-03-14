@@ -1,8 +1,8 @@
-# rose-pine-cursor-hyprcursor
+# rose-pine-hyprcursor
 
-![AUR Version](https://img.shields.io/aur/version/rose-pine-cursor-hyprcursor?style=for-the-badge&logo=arch&labelColor=black&color=black)
-![AUR Maintainer](https://img.shields.io/aur/maintainer/rose-pine-cursor-hyprcursor?style=for-the-badge&labelColor=black&color=black)
-![AUR Last Modified](https://img.shields.io/aur/last-modified/rose-pine-cursor-hyprcursor?style=for-the-badge&labelColor=black&color=black)
+![AUR Version](https://img.shields.io/aur/version/rose-pine-hyprcursor?style=for-the-badge&logo=arch&labelColor=black&color=black)
+![AUR Maintainer](https://img.shields.io/aur/maintainer/rose-pine-hyprcursor?style=for-the-badge&labelColor=black&color=black)
+![AUR Last Modified](https://img.shields.io/aur/last-modified/rose-pine-hyprcursor?style=for-the-badge&labelColor=black&color=black)
 
 ![Cursor showcase](https://github.com/rose-pine/cursor/assets/44733677/0c4f6823-48d5-4ec1-8e1c-201b22463ea1)
 
@@ -21,7 +21,7 @@ This is a [Rose Pine](https://github.com/rose-pine/cursor) remix of the original
 
 ### Arch
 
-1. Install from the [AUR](https://aur.archlinux.org/packages/rose-pine-cursor-hyprcursor)
+1. Install from the [AUR](https://aur.archlinux.org/packages/rose-pine-hyprcursor)
 
 ```bash
 yay -S rose-pine-cursor-hyprland
@@ -40,7 +40,7 @@ yay -S rose-pine-cursor-hyprland
     hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
 
     # Add this line
-    rose-pine-cursor-hyprcursor.url = "github:ndom91/rose-pine-cursor-hyprcursor";
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
   outputs = { self, unstable, agenix, nix-colors, nixpkgs, ... } @inputs: {
   nixosConfigurations = {
@@ -60,7 +60,7 @@ yay -S rose-pine-cursor-hyprland
 Add the `HYPRCURSOR_THEME` environment variable to your `hyprland` config
 
 ```
-env = HYPRCURSOR_THEME,rose-pine-cursor-hyprcursor
+env = HYPRCURSOR_THEME,rose-pine-hyprcursor
 ```
 
 ## 🖼️ Gallery
@@ -69,8 +69,8 @@ env = HYPRCURSOR_THEME,rose-pine-cursor-hyprcursor
 
 1. If the theme isn't loading for whatever reason, make sure it is available in one of the valid icon paths, for example:
 
-- `/usr/share/icons/rose-pine-cursor-hyprcursor`
-- `~/.local/share/icons/rose-pine-cursor-hyprcursor`
+- `/usr/share/icons/rose-pine-hyprcursor`
+- `~/.local/share/icons/rose-pine-hyprcursor`
 
 2. You can also [enable `debug` logging](https://wiki.hyprland.org/Configuring/Variables/#debug) in Hyprland to see if there's any helpful information there
 

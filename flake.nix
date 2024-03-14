@@ -25,12 +25,12 @@
               gtk.enable = true;
               x11.enable = true;
               package = self.defaultPackage."${system}";
-              name = "rose-pine-cursor-hyprcursor";
+              name = "rose-pine-hyprcursor";
               size = 24;
             };
             gtk.cursorTheme = {
               package = self.defaultPackage."${system}";
-              name = "rose-pine-cursor-hyprcursor";
+              name = "rose-pine-hyprcursor";
               size = 24;
             };
           };
