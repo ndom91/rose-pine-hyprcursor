@@ -6,7 +6,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "ndom91";
     repo = "rose-pine-hyprcursor";
     rev = "e4dde6d19da2d048cf4b224fe2ed1576c9c50087";
-    sha256 = "sha256-h7qivaCqoJj1ZbWT86WA1gp769vgTUhDDxcJOZ1WfMU=";
+    sha256 = "sha256-tTYD2JQ9+7A7wzEZtAI6RCec/2ULdSZJvbKyOWIKes0=";
   };
 
   installPhase = ''
