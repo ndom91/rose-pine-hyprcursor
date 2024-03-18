@@ -5,8 +5,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = nixpkgs.fetchFromGitHub {
     owner = "ndom91";
     repo = "rose-pine-hyprcursor";
-    rev = "e4dde6d19da2d048cf4b224fe2ed1576c9c50087";
-    sha256 = "sha256-tTYD2JQ9+7A7wzEZtAI6RCec/2ULdSZJvbKyOWIKes0=";
+    rev = "a233b19c79598f6703dd112cf4e06c61e40833aa";
+    sha256 = "sha256-QD7XSoQnDspqEVcRfI87zmxjcvtU17MAXYhaCeMY5Ls=";
   };
 
   installPhase = ''
