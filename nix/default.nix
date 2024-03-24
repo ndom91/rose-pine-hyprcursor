@@ -1,7 +1,7 @@
 { lib, stdenv, nixpkgs, fetchurl }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "rose-pine-hyprcursor";
-  version = "0.1.0";
+  version = "0.3.1";
   src = nixpkgs.fetchFromGitHub {
     owner = "ndom91";
     repo = "rose-pine-hyprcursor";
@@ -10,8 +10,12 @@ stdenv.mkDerivation (finalAttrs: {
   };
 
   installPhase = ''
+    runHook preInstall
+
     mkdir -p $out/share/icons/rose-pine-hyprcursor
     cp -R . $out/share/icons/rose-pine-hyprcursor/
+    
+    runHook postInstall
   '';
 
   meta = with lib; {
