@@ -1,12 +1,12 @@
 { lib, stdenv, nixpkgs, fetchurl }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "rose-pine-hyprcursor";
-  version = "0.3.1";
+  version = "0.3.2";
   src = nixpkgs.fetchFromGitHub {
     owner = "ndom91";
     repo = "rose-pine-hyprcursor";
-    rev = "a233b19c79598f6703dd112cf4e06c61e40833aa";
-    sha256 = "sha256-QD7XSoQnDspqEVcRfI87zmxjcvtU17MAXYhaCeMY5Ls=";
+    rev = "d2c0e6802f0ed1e7c638bb27b5aa8587b578d083";
+    sha256 = "sha256-ArUX5qlqAXUqcRqHz4QxXy3KgkfasTPA/Qwf6D2kV0U=";
   };
 
   installPhase = ''

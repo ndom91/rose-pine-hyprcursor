@@ -18,22 +18,8 @@
       in
       {
         packages.default = pkgs.callPackage ./nix/default.nix { nixpkgs = pkgs; };
-
-        nixosModules.default = { config, lib, ... }: {
-          config = {
-            home.pointerCursor = {
-              gtk.enable = true;
-              x11.enable = true;
-              package = self.defaultPackage."${system}";
-              name = "rose-pine-hyprcursor";
-              size = 24;
-            };
-            gtk.cursorTheme = {
-              package = self.defaultPackage."${system}";
-              name = "rose-pine-hyprcursor";
-              size = 24;
-            };
-          };
+        environment.variables = {
+          HYPRCURSOR_THEME = "rose-pine-hyprcursor";
         };
 
         formatter = nixpkgs.${system}.nixpkgs-fmt;
