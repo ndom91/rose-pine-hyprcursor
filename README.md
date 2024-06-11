@@ -58,7 +58,7 @@ yay -S rose-pine-hyprcursor
 2. Install the package in your `configuration.nix`
 
 ```nix
-  environment.systemPackages = stable-packages ++ unstable-packages ++ [
+  environment.systemPackages = [
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 ```
