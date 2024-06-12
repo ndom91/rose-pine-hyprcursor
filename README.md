@@ -55,6 +55,14 @@ yay -S rose-pine-hyprcursor
 }
 ```
 
+2. Install the package in your `configuration.nix`
+
+```nix
+  environment.systemPackages = [
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+  ];
+```
+
 ## ⚒️ Usage
 
 Add the `HYPRCURSOR_THEME` environment variable to your `hyprland` config
