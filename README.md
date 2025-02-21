@@ -39,9 +39,11 @@ yay -S rose-pine-hyprcursor
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
 
-    # Add this line
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-    # ^^^^^
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+    };
   };
   outputs = { self, unstable, nixpkgs, ... } @inputs: {
   nixosConfigurations = {
