@@ -84,7 +84,7 @@ env = HYPRCURSOR_THEME,rose-pine-hyprcursor
 
 ```hyprlang
 debug {
-  debug_logs = true
+  disable_logs = false
 }
 ```
 
