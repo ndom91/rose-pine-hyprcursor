@@ -33,27 +33,27 @@ yay -S rose-pine-hyprcursor
 
 ```nix
 {
-  description = "Laptop Machine Flake";
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
-
-    rose-pine-hyprcursor = {
-      url = "github:ndom91/rose-pine-hyprcursor";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprlang.follows = "hyprland/hyprlang";
+    description = "Laptop Machine Flake";
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+        unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
+        rose-pine-hyprcursor = {
+            url = "github:ndom91/rose-pine-hyprcursor";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.hyprlang.follows = "hyprland/hyprlang";
+        };
     };
-  };
-  outputs = { self, unstable, nixpkgs, ... } @inputs: {
-  nixosConfigurations = {
-    laptop01 = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/laptop01/configuration.nix
-      ];
+    outputs = { self, unstable, nixpkgs, ... } @inputs: {
+        nixosConfigurations = {
+            laptop01 = nixpkgs.lib.nixosSystem {
+                specialArgs = { inherit inputs; };
+                modules = [
+                    ./hosts/laptop01/configuration.nix
+                ];
+            };
+        };
     };
-  };
 }
 ```
 
